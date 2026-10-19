@@ -13,15 +13,14 @@ def average_score(filename):
     file = open(filename, 'r')
     for line in file:
         line = line.strip()
-        if not line:
-            parts=line.split(',')
-            score=int(parts[1])
-            total_score+=score
-            student_count+=1
+        if line:
+            parts = line.split(',')
+            score = int(parts[1])
+            total_score += score
+            student_count += 1
     file.close()
-    if student_count==0:
+    if student_count == 0:
         return 0
-
     average = total_score / student_count
     return f"Average score: {average:.1f}"
 # Exercise 3
