@@ -23,8 +23,7 @@ def average_score(filename):
         return 0
 
     average = total_score / student_count
-    return round(average, 1)
-
+    return f"Average score: {average:.1f}"
 # Exercise 3
 def filter_passed(source, destination, pass_mark):
     # Write your code here
