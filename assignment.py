@@ -24,9 +24,20 @@ def average_score(filename):
     average = total_score / student_count
     return round(average,1)
 # Exercise 3
-def filter_passed(source, destination, pass_mark):
-    # Write your code here
-    pass
+def filter_passing_students(source,destination,pass_mark):
+    src = open(source, 'r')
+    lines = src.readlines()
+    src.close()
+    passing_students = []
+    pass_count = 0
+    for line in lines:
+        if line.strip():
+            continue
+        name, score_str = line.strip().split(',')
+        score = int(score_str)
+        if score >= pass_mark:
+            pass_count += 1
+    return pass_count
 
 # Exercise 4
 def replace_word(filename, old_word, new_word):
