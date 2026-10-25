@@ -26,16 +26,27 @@ def filter_passing_students(source,destination,pass_mark):
     src = open(source, 'r')
     lines = src.readlines()
     src.close()
+    
     passing_students = []
     pass_count = 0
+    
     for line in lines:
-        if line.strip():
+        if not line.strip():
             continue
+            
         name, score_str = line.strip().split(',')
         score = int(score_str)
+        
         if score >= pass_mark:
             pass_count += 1
+            passing_students.append(f"{name},{score}\n")
+            
+    file = open(destination, 'w')
+    file.writelines(passing_students)
+    file.close()
+    
     return pass_count
+
 # Exercise 4
 def replace_word(filename, old_word, new_word):
     # Write your code here
