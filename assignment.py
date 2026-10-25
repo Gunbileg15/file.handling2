@@ -4,7 +4,6 @@ def save_scores(names, scores, filename):
     for i in range(len(names)):
         file.write(f"{names[i]},{scores[i]}\n")
     file.close()
-    pass
 # Exercise 2
 def calculate_average(filename):
     file = open(filename, "r")
@@ -24,7 +23,6 @@ def calculate_average(filename):
         return 0
         
     return round(total / count, 1)
-    pass
 # Exercise 3
 def filter_passing_students(source,destination,pass_mark):
     src = open(source, 'r')
