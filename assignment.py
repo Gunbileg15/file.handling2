@@ -1,6 +1,4 @@
-# You can remove 'pass' if you written code in the function
 # Exercise 1
-
 def save_scores(names, scores, filename):
     file = open(filename,"w")
     for i in range(len(names)):
@@ -38,7 +36,6 @@ def filter_passing_students(source,destination,pass_mark):
         if score >= pass_mark:
             pass_count += 1
     return pass_count
-
 # Exercise 4
 def replace_word(filename, old_word, new_word):
     # Write your code here
