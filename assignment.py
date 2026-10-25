@@ -6,22 +6,25 @@ def save_scores(names, scores, filename):
     file.close()
     pass
 # Exercise 2
-def average_score(filename):
-    total_score = 0
-    student_count = 0
-    file = open(filename, 'r')
-    for line in file:
-        line = line.strip()
-        if line:
-            parts = line.split(',')
-            score = int(parts[1])
-            total_score += score
-            student_count += 1
+def calculate_average(filename):
+    file = open(filename, "r")
+    lines = file.readlines()
     file.close()
-    if student_count == 0:
+    
+    total = 0
+    count = 0
+    for i in range(len(lines)):
+        line = lines[i].strip()
+        if line != "":
+            parts = line.split(",")
+            total += int(parts[1])
+            count += 1
+            
+    if count == 0:
         return 0
-    average = total_score / student_count
-    return round(average,1)
+        
+    return round(total / count, 1)
+    pass
 # Exercise 3
 def filter_passing_students(source,destination,pass_mark):
     src = open(source, 'r')
