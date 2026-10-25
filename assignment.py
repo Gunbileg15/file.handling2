@@ -4,6 +4,7 @@ def save_scores(names, scores, filename):
     for i in range(len(names)):
         file.write(f"{names[i]},{scores[i]}\n")
     file.close()
+    pass
 # Exercise 2
 def average_score(filename):
     total_score = 0
