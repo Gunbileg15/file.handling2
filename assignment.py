@@ -1,6 +1,6 @@
 # Exercise 1
 def save_scores(names, scores, filename):
-    file = open(filename,"w")
+    file = open(filename, "w")
     for i in range(len(names)):
         file.write(f"{names[i]},{scores[i]}\n")
     file.close()
